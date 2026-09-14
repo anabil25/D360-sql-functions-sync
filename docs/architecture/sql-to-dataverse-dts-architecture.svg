@@ -1,0 +1,274 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 980" width="1680" height="980" font-family="Segoe UI, Inter, Helvetica Neue, Arial, sans-serif">
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EDF2F8"/>
+    </linearGradient>
+    <linearGradient id="titleAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="55%" stop-color="#107C41"/>
+      <stop offset="100%" stop-color="#C2255C"/>
+    </linearGradient>
+
+    <filter id="cardShadow" x="-20%" y="-30%" width="140%" height="180%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0F172A" flood-opacity="0.13"/>
+    </filter>
+    <filter id="zoneShadow" x="-10%" y="-12%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+
+    <marker id="arrowBlue" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#0078D4"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#107C41"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrowPink" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#C2255C"/>
+    </marker>
+    <marker id="arrowSlate" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#94A3B8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#C77700"/>
+    </marker>
+  </defs>
+
+  <rect width="1680" height="980" fill="url(#page)"/>
+
+  <!-- Title -->
+  <rect x="60" y="44" width="8" height="62" rx="4" fill="url(#titleAccent)"/>
+  <text x="86" y="74" font-size="30" font-weight="700" fill="#0F172A">D360: SQL Server to Dataverse Synchronization</text>
+  <text x="86" y="102" font-size="16.5" fill="#475569">.NET isolated Durable Functions with the Durable Task Scheduler as the workflow system of record</text>
+
+  <!-- ===================== AZURE BOUNDARY ===================== -->
+  <g filter="url(#zoneShadow)">
+    <rect x="380" y="140" width="1250" height="690" rx="26" fill="#FFFFFF" stroke="#BFD9F2" stroke-width="2"/>
+  </g>
+  <rect x="404" y="160" width="86" height="26" rx="13" fill="#E6F1FB"/>
+  <text x="447" y="178" font-size="13.5" font-weight="700" fill="#0B5394" text-anchor="middle">AZURE</text>
+
+  <!-- ===================== FUNCTION APP ZONE ===================== -->
+  <rect x="410" y="215" width="540" height="575" rx="20" fill="#EAF3FC" stroke="#0078D4" stroke-width="1.6" stroke-dasharray="6 5"/>
+  <text x="434" y="246" font-size="15.5" font-weight="700" fill="#084B8A">.NET Isolated Function App</text>
+
+  <!-- Bootstrap Function -->
+  <g filter="url(#cardShadow)">
+    <rect x="440" y="262" width="480" height="62" rx="12" fill="#FFFFFF" stroke="#CBD8E6"/>
+  </g>
+  <rect x="440" y="262" width="6" height="62" rx="3" fill="#0078D4"/>
+  <text x="464" y="288" font-size="16" font-weight="650" fill="#0F172A">Bootstrap Function</text>
+  <text x="464" y="309" font-size="13" fill="#64748B">Starts / ensures one singleton instance per partition</text>
+
+  <!-- Orchestrator -->
+  <g filter="url(#cardShadow)">
+    <rect x="440" y="356" width="480" height="88" rx="12" fill="#FFFFFF" stroke="#CBD8E6"/>
+  </g>
+  <rect x="440" y="356" width="6" height="88" rx="3" fill="#0078D4"/>
+  <text x="464" y="383" font-size="16.5" font-weight="700" fill="#0F172A">Sync Supervisor Orchestrator</text>
+  <text x="464" y="404" font-size="13" fill="#64748B">Versioned, replay-safe, deterministic</text>
+  <text x="464" y="425" font-size="13" fill="#64748B">Owns paging loop, checkpointing, ContinueAsNew</text>
+
+  <!-- Capture window activity -->
+  <g filter="url(#cardShadow)">
+    <rect x="440" y="476" width="480" height="62" rx="12" fill="#FFFFFF" stroke="#CBD8E6"/>
+  </g>
+  <rect x="440" y="476" width="6" height="62" rx="3" fill="#7C3AED"/>
+  <text x="464" y="502" font-size="16" font-weight="650" fill="#0F172A">Capture SQL Window Activity</text>
+  <text x="464" y="523" font-size="13" fill="#64748B">Fixes one source-server UTC window end</text>
+
+  <!-- Process page activity -->
+  <g filter="url(#cardShadow)">
+    <rect x="440" y="570" width="480" height="88" rx="12" fill="#FFFFFF" stroke="#CBD8E6"/>
+  </g>
+  <rect x="440" y="570" width="6" height="88" rx="3" fill="#C2255C"/>
+  <text x="464" y="597" font-size="16.5" font-weight="700" fill="#0F172A">Process Page Activity</text>
+  <text x="464" y="618" font-size="13" fill="#64748B">One keyset SQL page + one Dataverse request</text>
+  <text x="464" y="639" font-size="13" fill="#64748B">Returns cursor and metrics only — never rows</text>
+
+  <!-- App Insights -->
+  <g filter="url(#cardShadow)">
+    <rect x="440" y="690" width="480" height="62" rx="12" fill="#FFFFFF" stroke="#CBD8E6"/>
+  </g>
+  <rect x="440" y="690" width="6" height="62" rx="3" fill="#94A3B8"/>
+  <text x="464" y="716" font-size="16" font-weight="650" fill="#0F172A">Application Insights</text>
+  <text x="464" y="737" font-size="13" fill="#64748B">Throughput, retries, 429 rate, lag, failures</text>
+
+  <!-- ===================== DTS ZONE ===================== -->
+  <rect x="1010" y="215" width="590" height="440" rx="20" fill="#E9F7F0" stroke="#107C41" stroke-width="1.8"/>
+  <text x="1034" y="244" font-size="15.5" font-weight="700" fill="#0B5C31">Durable Task Scheduler — Workflow System of Record</text>
+  <text x="1034" y="276" font-size="12.5" font-style="italic" fill="#0B5C31">Receives work items, entity calls, timers, and checkpoint commits from the app</text>
+
+  <!-- Task hub -->
+  <g filter="url(#cardShadow)">
+    <rect x="1040" y="292" width="500" height="62" rx="12" fill="#FFFFFF" stroke="#BFE3D2"/>
+  </g>
+  <rect x="1040" y="292" width="6" height="62" rx="3" fill="#107C41"/>
+  <text x="1064" y="318" font-size="16" font-weight="650" fill="#0F172A">D360 Task Hub</text>
+  <text x="1064" y="339" font-size="13" fill="#64748B">gRPC push dispatch, managed identity, private endpoint</text>
+
+  <!-- Checkpoint entity -->
+  <g filter="url(#cardShadow)">
+    <rect x="1040" y="376" width="500" height="88" rx="12" fill="#FFFFFF" stroke="#BFE3D2"/>
+  </g>
+  <rect x="1040" y="376" width="6" height="88" rx="3" fill="#107C41"/>
+  <text x="1064" y="403" font-size="16.5" font-weight="700" fill="#0F172A">SyncCheckpoint Durable Entity</text>
+  <text x="1064" y="424" font-size="13" fill="#64748B">One per table / partition</text>
+  <text x="1064" y="445" font-size="13" fill="#0B5C31">Monotonic (ModifiedUtc, SourceKey) — never regresses</text>
+
+  <!-- History -->
+  <g filter="url(#cardShadow)">
+    <rect x="1040" y="486" width="500" height="88" rx="12" fill="#FFFFFF" stroke="#BFE3D2"/>
+  </g>
+  <rect x="1040" y="486" width="6" height="88" rx="3" fill="#107C41"/>
+  <text x="1064" y="513" font-size="16.5" font-weight="700" fill="#0F172A">Orchestration History &amp; Scheduling</text>
+  <text x="1064" y="534" font-size="13" fill="#64748B">Replay history, durable timers, retry state</text>
+  <text x="1064" y="555" font-size="13" fill="#64748B">ContinueAsNew keeps history bounded</text>
+
+  <!-- Dashboard -->
+  <g filter="url(#cardShadow)">
+    <rect x="1040" y="596" width="500" height="48" rx="12" fill="#FFFFFF" stroke="#BFE3D2"/>
+  </g>
+  <rect x="1040" y="596" width="6" height="48" rx="3" fill="#107C41"/>
+  <text x="1064" y="626" font-size="15.5" font-weight="650" fill="#0F172A">DTS Dashboard — inspect, pause, terminate, replay</text>
+
+  <!-- DTS internal stack connectors -->
+  <path d="M 1290 354 L 1290 376" stroke="#107C41" stroke-width="2" opacity="0.45"/>
+  <path d="M 1290 464 L 1290 486" stroke="#107C41" stroke-width="2" opacity="0.45"/>
+  <path d="M 1290 574 L 1290 596" stroke="#107C41" stroke-width="2" opacity="0.45"/>
+
+  <!-- ===================== HOST STORAGE ===================== -->
+  <g filter="url(#cardShadow)">
+    <rect x="1010" y="680" width="590" height="110" rx="16" fill="#FDF4E3" stroke="#C77700" stroke-width="1.6"/>
+  </g>
+  <text x="1040" y="715" font-size="16.5" font-weight="700" fill="#7A4A00">Function Host Storage Account</text>
+  <text x="1040" y="738" font-size="13" fill="#8A5A12">Azure Functions runtime state, keys, deployment artifacts</text>
+  <text x="1040" y="759" font-size="13" fill="#8A5A12">Identity-based AzureWebJobsStorage — platform requirement</text>
+  <text x="1040" y="778" font-size="12.5" font-style="italic" fill="#A06A1B">Not the integration checkpoint store</text>
+
+  <text x="410" y="812" font-size="13.5" fill="#475569">Workflow state lives in DTS. SQL rows never enter orchestration history, entity state, or custom status.</text>
+
+  <!-- ===================== EXTERNAL SYSTEMS ===================== -->
+  <!-- Bootstrap client -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="245" width="280" height="96" rx="14" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.4"/>
+  </g>
+  <rect x="60" y="245" width="6" height="96" rx="3" fill="#64748B"/>
+  <text x="84" y="279" font-size="16.5" font-weight="700" fill="#0F172A">Bootstrap Client</text>
+  <text x="84" y="301" font-size="13" fill="#64748B">Deploy, recover, roll over versions</text>
+  <text x="84" y="322" font-size="13" fill="#64748B">Fixed instance ID per table / partition</text>
+
+  <!-- SQL Server -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="452" width="280" height="110" rx="14" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.6"/>
+  </g>
+  <rect x="60" y="452" width="6" height="110" rx="3" fill="#7C3AED"/>
+  <text x="84" y="486" font-size="16.5" font-weight="700" fill="#0F172A">Source SQL Server</text>
+  <text x="84" y="508" font-size="13" fill="#64748B">Legacy / on-premises source of truth</text>
+  <text x="84" y="529" font-size="13" fill="#64748B">Covering index on (ModifiedUtc, SourceKey)</text>
+  <text x="84" y="550" font-size="13" fill="#5B21B6">Keyset paging — no OFFSET scans</text>
+
+  <!-- Dataverse -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="625" width="280" height="110" rx="14" fill="#FFFFFF" stroke="#C2255C" stroke-width="1.6"/>
+  </g>
+  <rect x="60" y="625" width="6" height="110" rx="3" fill="#C2255C"/>
+  <text x="84" y="659" font-size="16.5" font-weight="700" fill="#0F172A">Dataverse Web API</text>
+  <text x="84" y="681" font-size="13" fill="#64748B">Alternate-key upsert (idempotent)</text>
+  <text x="84" y="702" font-size="13" fill="#64748B">PATCH or UpsertMultiple</text>
+  <text x="84" y="723" font-size="13" fill="#9D174D">429 Retry-After honored in client</text>
+
+  <!-- ===================== FLOWS ===================== -->
+  <!-- 1 client -> bootstrap function -->
+  <path d="M 340 293 L 432 293" stroke="#64748B" stroke-width="2.4" fill="none" marker-end="url(#arrowSlate)"/>
+  <circle cx="386" cy="293" r="13" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+  <text x="386" y="298" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">1</text>
+
+  <!-- 2 bootstrap -> orchestrator -->
+  <path d="M 680 324 L 680 348" stroke="#0078D4" stroke-width="2.4" fill="none" marker-end="url(#arrowBlue)"/>
+  <circle cx="708" cy="340" r="13" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+  <text x="708" y="345" font-size="13" font-weight="700" fill="#0B5394" text-anchor="middle">2</text>
+
+  <!-- 3 orchestrator <-> task hub -->
+  <path d="M 920 380 C 972 380, 980 323, 1032 323" stroke="#107C41" stroke-width="2.6" fill="none"
+        marker-start="url(#arrowGreen)" marker-end="url(#arrowGreen)"/>
+  <circle cx="976" cy="351" r="13" fill="#FFFFFF" stroke="#107C41" stroke-width="2"/>
+  <text x="976" y="356" font-size="13" font-weight="700" fill="#0B5C31" text-anchor="middle">3</text>
+
+  <!-- 4 orchestrator -> capture window -->
+  <path d="M 680 444 L 680 468" stroke="#7C3AED" stroke-width="2.4" fill="none" marker-end="url(#arrowPurple)"/>
+  <circle cx="708" cy="460" r="13" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+  <text x="708" y="465" font-size="13" font-weight="700" fill="#5B21B6" text-anchor="middle">4</text>
+
+  <!-- 4b capture window -> SQL -->
+  <path d="M 440 507 L 348 507" stroke="#7C3AED" stroke-width="2.4" fill="none" marker-end="url(#arrowPurple)"/>
+  <text x="356" y="497" font-size="12.5" fill="#5B21B6">window end</text>
+
+  <!-- 5 capture -> process page -->
+  <path d="M 680 538 L 680 562" stroke="#C2255C" stroke-width="2.4" fill="none" marker-end="url(#arrowPink)"/>
+  <circle cx="708" cy="554" r="13" fill="#FFFFFF" stroke="#C2255C" stroke-width="2"/>
+  <text x="708" y="559" font-size="13" font-weight="700" fill="#9D174D" text-anchor="middle">5</text>
+
+  <!-- 6 process page -> SQL -->
+  <path d="M 440 590 C 402 590, 392 540, 348 540" stroke="#7C3AED" stroke-width="2.4" fill="none" marker-end="url(#arrowPurple)"/>
+  <circle cx="400" cy="564" r="13" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+  <text x="400" y="569" font-size="13" font-weight="700" fill="#5B21B6" text-anchor="middle">6</text>
+
+  <!-- 7 process page -> Dataverse -->
+  <path d="M 440 638 C 402 638, 392 676, 348 676" stroke="#C2255C" stroke-width="2.6" fill="none" marker-end="url(#arrowPink)"/>
+  <circle cx="400" cy="658" r="13" fill="#FFFFFF" stroke="#C2255C" stroke-width="2"/>
+  <text x="400" y="663" font-size="13" font-weight="700" fill="#9D174D" text-anchor="middle">7</text>
+
+  <!-- 8 process page -> orchestrator (return) -->
+  <path d="M 920 614 C 944 614, 944 430, 928 430" stroke="#0078D4" stroke-width="2.4" fill="none" stroke-dasharray="7 4" marker-end="url(#arrowBlue)"/>
+  <circle cx="941" cy="522" r="13" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+  <text x="941" y="527" font-size="13" font-weight="700" fill="#0B5394" text-anchor="middle">8</text>
+
+  <!-- metrics -->
+  <path d="M 680 658 L 680 682" stroke="#94A3B8" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#arrowSlate)"/>
+
+  <!-- host storage dependency -->
+  <path d="M 952 742 L 1002 732" stroke="#C77700" stroke-width="2.2" fill="none" stroke-dasharray="7 5" marker-end="url(#arrowAmber)"/>
+
+  <!-- ===================== SEQUENCE CALLOUT ===================== -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="775" width="280" height="146" rx="14" fill="#FFFFFF" stroke="#CBD8E6"/>
+  </g>
+  <text x="84" y="803" font-size="14.5" font-weight="700" fill="#0F172A">Commit order per page</text>
+  <text x="84" y="827" font-size="12.8" fill="#475569">1. Read one ordered SQL page</text>
+  <text x="84" y="848" font-size="12.8" fill="#475569">2. Write it to Dataverse (idempotent)</text>
+  <text x="84" y="869" font-size="12.8" fill="#475569">3. Advance checkpoint entity</text>
+  <text x="84" y="890" font-size="12.8" fill="#475569">4. ContinueAsNew for next page</text>
+  <text x="84" y="911" font-size="12.5" font-style="italic" fill="#0B5C31">Crash before step 3 = safe replay</text>
+
+  <!-- ===================== LEGEND ===================== -->
+  <g filter="url(#cardShadow)">
+    <rect x="380" y="855" width="1250" height="66" rx="14" fill="#FFFFFF" stroke="#CBD8E6"/>
+  </g>
+
+  <path d="M 404 888 L 446 888" stroke="#334155" stroke-width="2.6" marker-end="url(#arrowSlate)"/>
+  <text x="456" y="893" font-size="13" fill="#475569">Runtime flow</text>
+
+  <path d="M 566 888 L 608 888" stroke="#334155" stroke-width="2.4" stroke-dasharray="7 4" marker-end="url(#arrowSlate)"/>
+  <text x="618" y="893" font-size="13" fill="#475569">Return data / platform dependency</text>
+
+  <rect x="824" y="878" width="20" height="20" rx="5" fill="#EAF3FC" stroke="#0078D4"/>
+  <text x="852" y="893" font-size="13" fill="#475569">Compute</text>
+
+  <rect x="936" y="878" width="20" height="20" rx="5" fill="#E9F7F0" stroke="#107C41"/>
+  <text x="964" y="893" font-size="13" fill="#475569">Durable state (DTS)</text>
+
+  <rect x="1112" y="878" width="20" height="20" rx="5" fill="#FDF4E3" stroke="#C77700"/>
+  <text x="1140" y="893" font-size="13" fill="#475569">Platform storage</text>
+
+  <rect x="1272" y="878" width="20" height="20" rx="5" fill="#FFFFFF" stroke="#7C3AED"/>
+  <text x="1300" y="893" font-size="13" fill="#475569">Source</text>
+
+  <rect x="1372" y="878" width="20" height="20" rx="5" fill="#FFFFFF" stroke="#C2255C"/>
+  <text x="1400" y="893" font-size="13" fill="#475569">Destination</text>
+
+  <text x="1606" y="893" font-size="12.5" font-style="italic" fill="#94A3B8" text-anchor="end">2026-09-14</text>
+</svg>

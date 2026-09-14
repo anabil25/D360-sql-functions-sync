@@ -1,0 +1,16 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "TASKHUB_NAME": "default",
+    "DURABLE_TASK_SCHEDULER_CONNECTION_STRING": "Endpoint=http://localhost:8080;Authentication=None",
+    "SIMULATED_ROW_COUNT": "1000",
+    "SIMULATED_WRITE_LATENCY_MS": "25",
+    "SQL_CONNECTION_STRING": "",
+    "DATAVERSE_URL": "https://your-environment.crm.dynamics.com",
+    "DATAVERSE_TENANT_ID": "",
+    "DATAVERSE_CLIENT_ID": "",
+    "DATAVERSE_CLIENT_SECRET": ""
+  }
+}
